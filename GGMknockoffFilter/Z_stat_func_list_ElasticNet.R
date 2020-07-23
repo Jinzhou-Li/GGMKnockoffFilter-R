@@ -1,6 +1,6 @@
 #### Generate 'Z_stat_function_list' based on elastic net (coef and max_lambda) for 'GKF-Re'
 
-# Z-function in this list should only has argument 'Nodewise_Y_Xs_Xk_list' and 'num.cores' left
+# Z-functions in this list should only have arguments 'Nodewise_Y_Xs_Xk_list' and 'num.cores'
 
 Z_stat_func_list_ElasticNet <-function(alpha_vec, lambda_quantile_vec){
   
