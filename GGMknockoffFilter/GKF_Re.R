@@ -1,14 +1,29 @@
 ### GGM knockoff filter with sample-splitting-recycling (Algprithm 4 in the paper)
-### The default hyperparameter space is set as in the paper. 
+
+# input: 'X': data matrix (n \times p)
+#        'q': nominal FDR level
+#        'offset': indicate FDR (offset=1) / mFDR (offset=0) control, the default value is 1
+#        'knockoff_method_set': set of method to construct knockoffs
+#        'rule_set': set of rule used to recover the estimated edge set from the estimated neighborhoods
+#        'a_vec': set of parameter used in the optimization problem
+#        'W_matrix_BasedOnZ_set': set of method used to construct feature statsitics (i.e. W-statistics) based on Z-statistics
+#        'Z_stat_function_list': set of function used to construct Z-statistics (measure the importance of variable/knockoff to the response)
+#        'num.cores': number of cores used for the parallel, the default value is 1
+# output: 'E_est': estimated edge set
+
+### The default hyperparameter space is set as in the simulation part of the paper. 
+
+##########################################################
 
 library(knockoff)        # for nodewisely constructing knockoffs
 library(parallel)        # parallel when nodewisely construct knockoffs and Z-statistics
 
-########################################################
-######## Main function
+##########################################################
+### Main function:
 GKF_Re <- function(X, q, offset=1, Recycling=TRUE,
                    knockoff_method_set=c("equi", "sdp"), 
-                   rule_set=c("AND","OR"), a_vec=c(1,0.01),
+                   rule_set=c("AND","OR"), 
+                   a_vec=c(1,0.01),
                    W_matrix_BasedOnZ_set=c("difference", "max_sign"), 
                    Z_stat_function_list = Z_stat_func_list_ElasticNet(alpha_vec=seq(0.2,1,0.2), lambda_quantile_vec=0.1*(1:10)),
                    num.cores=1){

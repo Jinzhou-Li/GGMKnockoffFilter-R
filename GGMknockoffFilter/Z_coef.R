@@ -1,9 +1,10 @@
-### Z-statistics constructed based on the estimated coefficient using elastic net
+### Z-statistics constructed based on the estimated coefficients using elastic net
 
-library(glmnet)
-# library(parallel)
+library(glmnet)    
 
-# Main function:
+##########################################################
+### Main function:
+
 Z_coef <- function(Nodewise_Y_Xs_Xk_list, num.cores, alpha, lambda_quantile_vec){
   
   Z_list <- mcmapply(Z_coef_OneNode, 1:ncol(Nodewise_Y_Xs_Xk_list), 

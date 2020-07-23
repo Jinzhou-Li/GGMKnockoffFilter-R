@@ -1,9 +1,9 @@
 ### Z-statistics constructed based on the maximal lambda enter the path using elastic net
 
 library(glmnet)
-# library(parallel)
 
-# Main function:
+##########################################################
+### Main function:
 Z_max_lambda <- function(Nodewise_Y_Xs_Xk_list, num.cores, alpha){
   Z_list <- mcmapply(Z_max_lambda_OneNode, 1:ncol(Nodewise_Y_Xs_Xk_list), 
                      MoreArgs=list(Nodewise_Y_Xs_Xk_list, alpha), mc.cores=num.cores)

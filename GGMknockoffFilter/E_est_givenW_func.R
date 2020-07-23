@@ -2,9 +2,9 @@
 
 # input: 'W_matrix': feature statistic matri
 #        'q': nominal FDR level
-#        'offset': indicate FDR/mFDR control
-#        'rule': AND or OR
-#        '(a,c_1)': used in optimization problem
+#        'offset': indicate FDR (offset=1) / mFDR (offset=0) control
+#        'rule': choose from ("AND" and "OR"), rule used to recover the estimated edge set from the estimated neighborhoods.
+#        'a': choose from (1 and 0.01), parameter used in the optimization problem
 # output: 'E_est': estimated edge set
 
 ##########################################################
