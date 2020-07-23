@@ -1,3 +1,5 @@
+# Function from “https://github.com/LedererLab/GGM-FDR” to implement the 'KO2' method
+
 library(base)  # symmetrize matrices
 library(Matrix)  # symmetrize matrices
 library(matrixcalc)  # to access triangular matrix conviniently
