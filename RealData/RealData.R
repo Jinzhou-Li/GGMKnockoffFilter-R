@@ -15,6 +15,7 @@ source("GGMknockoffFilter/E_est_givenW_func.R")
 source("GGMknockoffFilter/GKF_Re.R")
 
 #################################################################################
+# This public real data set can be downloaded from: https://journals.plos.org/ploscompbiol/article?id=%2010.1371/journal.pcbi.1006369 (see S2 Appendix).
 load("RealData/sc_pan_T.RData")
 
 ##### select "num_var" variables with the largest variances
