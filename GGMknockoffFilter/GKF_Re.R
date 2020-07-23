@@ -102,11 +102,10 @@ GKF_Re <- function(X, q, offset=1, Recycling=TRUE,
   #######################
   ### 2. Implement the selected algorithm to X2 to get E_est
   
-  # Recycling
   Nodewise_Y_Xs_Xk_list2 <- Nodewise_Y_Xs_Xk(X_2, knockoff_method_set[Hyperpara_selec[1]], num.cores)
   Nodewise_Y_Xs_Xk_list_final <- Nodewise_Y_Xs_Xk_list2 
   
-  # data recycling data
+  # data recycling
   if(Recycling==TRUE){
     Nodewise_Y_list2 <- Nodewise_Y_Xs_Xk_list2[1,]
     Nodewise_Xs_list2 <- Nodewise_Y_Xs_Xk_list2[2,]
