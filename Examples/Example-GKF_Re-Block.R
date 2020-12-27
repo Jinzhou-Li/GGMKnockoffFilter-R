@@ -12,7 +12,7 @@ source("GGMknockoffFilter/GKF_Re.R")
 
 #################################################
 n = 3000          # number of observations
-q = 0.3           # nominal FDR level
+q = 0.2           # nominal FDR level
 
 ### Block graph
 p_block <- 20           # number of variables in each cluster

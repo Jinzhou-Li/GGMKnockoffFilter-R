@@ -13,7 +13,7 @@ source("GGMknockoffFilter/GKF_Re.R")
 #################################################
 n = 3000          # number of observations
 p = 200
-q = 0.3           # nominal FDR level
+q = 0.2           # nominal FDR level
 
 ### Band graph
 k= 10
